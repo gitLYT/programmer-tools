@@ -1,0 +1,131 @@
+{
+  "Navbar": {
+    "title": "Programmer Tools",
+    "home": "Home",
+    "tools": "Tools",
+    "language": "Language"
+  },
+  "Footer": {
+    "rights": "Programmer Tools. All rights reserved."
+  },
+  "Home": {
+    "title": "OpenClaw Installation Guide",
+    "description": "OpenClaw is a powerful personal AI assistant framework. This tutorial guides you through installation on personal computers (local) and cloud servers (remote).",
+    "section1": {
+      "title": "I. Personal Computer Installation (Windows / macOS / Linux)",
+      "intro": "The easiest way to install OpenClaw on a personal computer is using the official <strong>one-click installation script</strong>.",
+      "requirements": {
+        "title": "1. System Requirements",
+        "nodejs": "<strong>Node.js</strong>: Version 22 or higher required (script will auto-detect and attempt installation).",
+        "os": "<strong>OS</strong>: macOS, Linux, or Windows (recommended with <strong>WSL2</strong>)."
+      },
+      "steps": {
+        "title": "2. Installation Steps",
+        "unix": {
+          "title": "macOS / Linux / WSL2",
+          "desc": "Open terminal and run:"
+        },
+        "windows": {
+          "title": "Windows (PowerShell)",
+          "desc": "Open PowerShell as Administrator and run:"
+        }
+      },
+      "verify": {
+        "title": "3. Verify Installation",
+        "desc": "After installation, verify with these commands:",
+        "doctor": "Check configuration issues.",
+        "status": "Check gateway status.",
+        "dashboard": "Open dashboard in browser."
+      }
+    },
+    "section2": {
+      "title": "II. Cloud Server Installation (Linux / Docker)",
+      "intro": "On cloud servers (VPS), we recommend <strong>Docker</strong> for containerized deployment to keep the environment clean and manageable.",
+      "requirements": {
+        "title": "1. Prerequisites",
+        "docker": "Installed <strong>Docker</strong> and <strong>Docker Compose v2</strong>.",
+        "os": "A cloud server running a mainstream Linux distro (e.g., Ubuntu 22.04 LTS)."
+      },
+      "deploy": {
+        "title": "2. Quick Deploy with Docker",
+        "intro": "Recommended: Use the official <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>docker-setup.sh</code> script:",
+        "step1": "<strong>Clone Repository</strong>:",
+        "step2": "<strong>Run Setup Script</strong>:",
+        "step2_desc": "This script automatically builds images, runs the init wizard, and starts services.",
+        "step3": "<strong>Manual Deploy (Optional)</strong>:",
+        "step3_desc": "For finer control, use these commands:"
+      },
+      "access": {
+        "title": "3. Access & Config",
+        "dashboard": "<strong>Dashboard</strong>: Default at <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>http://ServerIP:18789/</code>.",
+        "security": "<strong>Security</strong>: Set a strong password or use SSH tunneling immediately after deployment.",
+        "token": "<strong>Get Token</strong>: To retrieve gateway token:"
+      }
+    },
+    "section3": {
+      "title": "III. Troubleshooting",
+      "issue1": {
+        "title": "1. <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw</code> command not found",
+        "desc": "Check environment variables if command is missing.",
+        "unix": "<strong>macOS/Linux</strong>: Add <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>$(npm prefix -g)/bin</code> to your <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>PATH</code> (usually in <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.zshrc</code> or <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.bashrc</code>).",
+        "windows": "<strong>Windows</strong>: Add <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>npm prefix -g</code> output path to System <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>Path</code>."
+      },
+      "issue2": {
+        "title": "2. Permission Issues",
+        "desc": "On Linux/macOS, try prepending <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>sudo</code> or checking folder ownership."
+      }
+    },
+    "section4": {
+      "title": "IV. Update & Uninstall",
+      "update": "<strong>Update</strong>: Run <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw update</code> or re-run install script.",
+      "uninstall": "<strong>Uninstall</strong>: Run <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw uninstall</code>."
+    },
+    "moreInfo": "For more details, visit"
+  },
+  "Tools": {
+    "title": "Programmer Tools Collection",
+    "json": {
+      "name": "JSON Formatter",
+      "desc": "Format and validate JSON data."
+    },
+    "base64": {
+      "name": "Base64 Encoder/Decoder",
+      "desc": "Encode and decode Base64 strings."
+    },
+    "timestamp": {
+      "name": "Timestamp Converter",
+      "desc": "Convert Unix timestamps to human-readable dates and vice versa."
+    }
+  },
+  "JsonFormatter": {
+    "title": "JSON Formatter",
+    "inputLabel": "Input JSON",
+    "outputLabel": "Output",
+    "placeholderInput": "Paste your JSON here...",
+    "placeholderOutput": "Formatted JSON will appear here...",
+    "format": "Format",
+    "minify": "Minify",
+    "clear": "Clear"
+  },
+  "Base64": {
+    "title": "Base64 Converter",
+    "textLabel": "Text Input",
+    "base64Label": "Base64 Output",
+    "placeholderText": "Type text to encode...",
+    "placeholderBase64": "Type Base64 to decode...",
+    "clearAll": "Clear All",
+    "invalidInput": "Invalid input for Base64 encoding",
+    "invalidBase64": "Invalid Base64 string"
+  },
+  "Timestamp": {
+    "title": "Timestamp Converter",
+    "current": "Current Unix Timestamp",
+    "labelTimestamp": "Unix Timestamp (Seconds)",
+    "labelDate": "Date String (Local)",
+    "now": "Now",
+    "invalidTimestamp": "Invalid Timestamp",
+    "invalidDate": "Invalid Date",
+    "placeholderTimestamp": "e.g. 1678886400",
+    "placeholderDate": "e.g. 2023-03-15 10:00:00"
+  }
+}

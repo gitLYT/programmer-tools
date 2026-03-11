@@ -1,0 +1,131 @@
+{
+  "Navbar": {
+    "title": "Alat Pemrogram",
+    "home": "Beranda",
+    "tools": "Alat",
+    "language": "Bahasa"
+  },
+  "Footer": {
+    "rights": "Programmer Tools. Hak cipta dilindungi undang-undang."
+  },
+  "Home": {
+    "title": "Panduan Instalasi OpenClaw",
+    "description": "OpenClaw adalah kerangka kerja asisten AI pribadi yang kuat. Tutorial ini memandu Anda melalui instalasi di komputer pribadi (lokal) dan server cloud (jarak jauh).",
+    "section1": {
+      "title": "I. Instalasi Komputer Pribadi (Windows / macOS / Linux)",
+      "intro": "Cara termudah untuk menginstal OpenClaw di komputer pribadi adalah menggunakan <strong>skrip instalasi satu klik</strong> resmi.",
+      "requirements": {
+        "title": "1. Persyaratan Sistem",
+        "nodejs": "<strong>Node.js</strong>: Diperlukan versi 22 atau lebih tinggi (skrip akan mendeteksi otomatis dan mencoba menginstal).",
+        "os": "<strong>OS</strong>: macOS, Linux, atau Windows (disarankan dengan <strong>WSL2</strong>)."
+      },
+      "steps": {
+        "title": "2. Langkah Instalasi",
+        "unix": {
+          "title": "macOS / Linux / WSL2",
+          "desc": "Buka terminal dan jalankan:"
+        },
+        "windows": {
+          "title": "Windows (PowerShell)",
+          "desc": "Buka PowerShell sebagai Administrator dan jalankan:"
+        }
+      },
+      "verify": {
+        "title": "3. Verifikasi Instalasi",
+        "desc": "Setelah instalasi, verifikasi dengan perintah ini:",
+        "doctor": "Periksa masalah konfigurasi.",
+        "status": "Periksa status gateway.",
+        "dashboard": "Buka dasbor di browser."
+      }
+    },
+    "section2": {
+      "title": "II. Instalasi Server Cloud (Linux / Docker)",
+      "intro": "Di server cloud (VPS), kami menyarankan <strong>Docker</strong> untuk penyebaran dalam kontainer agar lingkungan tetap bersih dan mudah dikelola.",
+      "requirements": {
+        "title": "1. Prasyarat",
+        "docker": "Telah menginstal <strong>Docker</strong> dan <strong>Docker Compose v2</strong>.",
+        "os": "Server cloud yang menjalankan distro Linux utama (misalnya, Ubuntu 22.04 LTS)."
+      },
+      "deploy": {
+        "title": "2. Penyebaran Cepat dengan Docker",
+        "intro": "Disarankan: Gunakan skrip resmi <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>docker-setup.sh</code>:",
+        "step1": "<strong>Klon Repositori</strong>:",
+        "step2": "<strong>Jalankan Skrip Pengaturan</strong>:",
+        "step2_desc": "Skrip ini secara otomatis membangun gambar, menjalankan wizard inisialisasi, dan memulai layanan.",
+        "step3": "<strong>Penyebaran Manual (Opsional)</strong>:",
+        "step3_desc": "Untuk kontrol yang lebih baik, gunakan perintah ini:"
+      },
+      "access": {
+        "title": "3. Akses & Konfigurasi",
+        "dashboard": "<strong>Dasbor</strong>: Default di <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>http://IPServer:18789/</code>.",
+        "security": "<strong>Tips Keamanan</strong>: Setelah berjalan di server cloud, pastikan untuk mengatur kata sandi yang kuat atau gunakan tunneling SSH segera setelah penyebaran.",
+        "token": "<strong>Dapatkan Token</strong>: Untuk mengambil token gateway:"
+      }
+    },
+    "section3": {
+      "title": "III. Pemecahan Masalah",
+      "issue1": {
+        "title": "1. Perintah <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw</code> tidak ditemukan",
+        "desc": "Periksa variabel lingkungan jika perintah hilang.",
+        "unix": "<strong>macOS/Linux</strong>: Tambahkan <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>$(npm prefix -g)/bin</code> ke <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>PATH</code> Anda (biasanya di <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.zshrc</code> atau <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.bashrc</code>).",
+        "windows": "<strong>Windows</strong>: Tambahkan jalur output <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>npm prefix -g</code> ke Variabel Sistem <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>Path</code>."
+      },
+      "issue2": {
+        "title": "2. Masalah Izin",
+        "desc": "Di Linux/macOS, coba tambahkan <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>sudo</code> atau periksa kepemilikan folder."
+      }
+    },
+    "section4": {
+      "title": "IV. Perbarui & Hapus Instalasi",
+      "update": "<strong>Perbarui</strong>: Jalankan <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw update</code> atau jalankan ulang skrip instalasi.",
+      "uninstall": "<strong>Hapus Instalasi</strong>: Jalankan <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw uninstall</code>."
+    },
+    "moreInfo": "Untuk detail lebih lanjut, kunjungi"
+  },
+  "Tools": {
+    "title": "Koleksi Alat Pemrogram",
+    "json": {
+      "name": "Pemformat JSON",
+      "desc": "Format dan validasi data JSON."
+    },
+    "base64": {
+      "name": "Enkoder/Dekoder Base64",
+      "desc": "Enkode dan dekode string Base64."
+    },
+    "timestamp": {
+      "name": "Konverter Timestamp",
+      "desc": "Konversi timestamp Unix ke tanggal yang dapat dibaca manusia dan sebaliknya."
+    }
+  },
+  "JsonFormatter": {
+    "title": "Pemformat JSON",
+    "inputLabel": "Input JSON",
+    "outputLabel": "Output",
+    "placeholderInput": "Tempel JSON Anda di sini...",
+    "placeholderOutput": "JSON yang diformat akan muncul di sini...",
+    "format": "Format",
+    "minify": "Minifikasi",
+    "clear": "Bersihkan"
+  },
+  "Base64": {
+    "title": "Konverter Base64",
+    "textLabel": "Input Teks",
+    "base64Label": "Output Base64",
+    "placeholderText": "Ketik teks untuk dienkode...",
+    "placeholderBase64": "Ketik Base64 untuk didekode...",
+    "clearAll": "Bersihkan Semua",
+    "invalidInput": "Input tidak valid untuk enkoding Base64",
+    "invalidBase64": "String Base64 tidak valid"
+  },
+  "Timestamp": {
+    "title": "Konverter Timestamp",
+    "current": "Timestamp Unix Saat Ini",
+    "labelTimestamp": "Timestamp Unix (Detik)",
+    "labelDate": "String Tanggal (Lokal)",
+    "now": "Sekarang",
+    "invalidTimestamp": "Timestamp Tidak Valid",
+    "invalidDate": "Tanggal Tidak Valid",
+    "placeholderTimestamp": "mis. 1678886400",
+    "placeholderDate": "mis. 2023-03-15 10:00:00"
+  }
+}

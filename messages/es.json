@@ -1,0 +1,131 @@
+{
+  "Navbar": {
+    "title": "Herramientas de Programador",
+    "home": "Inicio",
+    "tools": "Herramientas",
+    "language": "Idioma"
+  },
+  "Footer": {
+    "rights": "Programmer Tools. Todos los derechos reservados."
+  },
+  "Home": {
+    "title": "Guía de Instalación de OpenClaw",
+    "description": "OpenClaw es un potente marco de asistente de IA personal. Este tutorial le guía a través de la instalación en computadoras personales (local) y servidores en la nube (remoto).",
+    "section1": {
+      "title": "I. Instalación en Computadora Personal (Windows / macOS / Linux)",
+      "intro": "La forma más fácil de instalar OpenClaw en una computadora personal es usando el <strong>script de instalación de un clic</strong> oficial.",
+      "requirements": {
+        "title": "1. Requisitos del Sistema",
+        "nodejs": "<strong>Node.js</strong>: Se requiere versión 22 o superior (el script detectará e intentará instalar automáticamente).",
+        "os": "<strong>SO</strong>: macOS, Linux, o Windows (recomendado con <strong>WSL2</strong>)."
+      },
+      "steps": {
+        "title": "2. Pasos de Instalación",
+        "unix": {
+          "title": "macOS / Linux / WSL2",
+          "desc": "Abra la terminal y ejecute:"
+        },
+        "windows": {
+          "title": "Windows (PowerShell)",
+          "desc": "Abra PowerShell como Administrador y ejecute:"
+        }
+      },
+      "verify": {
+        "title": "3. Verificar Instalación",
+        "desc": "Después de la instalación, verifique con estos comandos:",
+        "doctor": "Comprobar problemas de configuración.",
+        "status": "Comprobar estado de la puerta de enlace.",
+        "dashboard": "Abrir panel en el navegador."
+      }
+    },
+    "section2": {
+      "title": "II. Instalación en Servidor Cloud (Linux / Docker)",
+      "intro": "En servidores en la nube (VPS), recomendamos <strong>Docker</strong> para implementación en contenedores para mantener el entorno limpio y manejable.",
+      "requirements": {
+        "title": "1. Prerrequisitos",
+        "docker": "Tener instalado <strong>Docker</strong> y <strong>Docker Compose v2</strong>.",
+        "os": "Un servidor en la nube ejecutando una distribución Linux principal (ej. Ubuntu 22.04 LTS)."
+      },
+      "deploy": {
+        "title": "2. Despliegue Rápido con Docker",
+        "intro": "Recomendado: Use el script oficial <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>docker-setup.sh</code>:",
+        "step1": "<strong>Clonar Repositorio</strong>:",
+        "step2": "<strong>Ejecutar Script de Configuración</strong>:",
+        "step2_desc": "Este script construye imágenes automáticamente, ejecuta el asistente de inicio e inicia los servicios.",
+        "step3": "<strong>Despliegue Manual (Opcional)</strong>:",
+        "step3_desc": "Para un control más fino, use estos comandos:"
+      },
+      "access": {
+        "title": "3. Acceso y Configuración",
+        "dashboard": "<strong>Panel</strong>: Por defecto en <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>http://IPServidor:18789/</code>.",
+        "security": "<strong>Consejo de Seguridad</strong>: Después de ejecutar en el servidor en la nube, asegúrese de establecer una contraseña fuerte o usar túneles SSH inmediatamente.",
+        "token": "<strong>Obtener Token</strong>: Para recuperar el token de la puerta de enlace:"
+      }
+    },
+    "section3": {
+      "title": "III. Solución de Problemas",
+      "issue1": {
+        "title": "1. Comando <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw</code> no encontrado",
+        "desc": "Compruebe las variables de entorno si falta el comando.",
+        "unix": "<strong>macOS/Linux</strong>: Añada <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>$(npm prefix -g)/bin</code> a su <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>PATH</code> (usualmente en <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.zshrc</code> o <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.bashrc</code>).",
+        "windows": "<strong>Windows</strong>: Añada la ruta de salida de <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>npm prefix -g</code> a la Variable del Sistema <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>Path</code>."
+      },
+      "issue2": {
+        "title": "2. Problemas de Permisos",
+        "desc": "En Linux/macOS, intente anteponer <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>sudo</code> o comprobar la propiedad de la carpeta."
+      }
+    },
+    "section4": {
+      "title": "IV. Actualizar y Desinstalar",
+      "update": "<strong>Actualizar</strong>: Ejecute <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw update</code> o vuelva a ejecutar el script de instalación.",
+      "uninstall": "<strong>Desinstalar</strong>: Ejecute <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw uninstall</code>."
+    },
+    "moreInfo": "Para más detalles, visite"
+  },
+  "Tools": {
+    "title": "Colección de Herramientas",
+    "json": {
+      "name": "Formateador JSON",
+      "desc": "Formatear y validar datos JSON."
+    },
+    "base64": {
+      "name": "Codificador/Decodificador Base64",
+      "desc": "Codificar y decodificar cadenas Base64."
+    },
+    "timestamp": {
+      "name": "Conversor de Timestamp",
+      "desc": "Convertir timestamps Unix a fechas legibles y viceversa."
+    }
+  },
+  "JsonFormatter": {
+    "title": "Formateador JSON",
+    "inputLabel": "Entrada JSON",
+    "outputLabel": "Salida",
+    "placeholderInput": "Pegue su JSON aquí...",
+    "placeholderOutput": "El JSON formateado aparecerá aquí...",
+    "format": "Formatear",
+    "minify": "Minificar",
+    "clear": "Limpiar"
+  },
+  "Base64": {
+    "title": "Conversor Base64",
+    "textLabel": "Entrada de Texto",
+    "base64Label": "Salida Base64",
+    "placeholderText": "Escriba texto para codificar...",
+    "placeholderBase64": "Escriba Base64 para decodificar...",
+    "clearAll": "Limpiar Todo",
+    "invalidInput": "Entrada inválida para codificación Base64",
+    "invalidBase64": "Cadena Base64 inválida"
+  },
+  "Timestamp": {
+    "title": "Conversor de Timestamp",
+    "current": "Timestamp Unix Actual",
+    "labelTimestamp": "Timestamp Unix (Segundos)",
+    "labelDate": "Cadena de Fecha (Local)",
+    "now": "Ahora",
+    "invalidTimestamp": "Timestamp Inválido",
+    "invalidDate": "Fecha Inválida",
+    "placeholderTimestamp": "ej. 1678886400",
+    "placeholderDate": "ej. 2023-03-15 10:00:00"
+  }
+}

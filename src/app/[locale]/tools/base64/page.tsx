@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function Base64Converter() {
+  const t = useTranslations('Base64');
   const [text, setText] = useState('');
   const [base64, setBase64] = useState('');
 
@@ -11,7 +13,7 @@ export default function Base64Converter() {
     try {
       setBase64(btoa(value));
     } catch (e) {
-      setBase64('Invalid input for Base64 encoding');
+      setBase64(t('invalidInput'));
     }
   };
 
@@ -20,32 +22,32 @@ export default function Base64Converter() {
     try {
       setText(atob(value));
     } catch (e) {
-      setText('Invalid Base64 string');
+      setText(t('invalidBase64'));
     }
   };
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Base64 Converter</h1>
+      <h1 className="text-3xl font-bold mb-6">{t('title')}</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="flex flex-col">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Text Input</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">{t('textLabel')}</label>
           <textarea
             className="flex-grow min-h-[300px] w-full p-4 border border-gray-300 rounded-lg font-mono text-sm focus:ring-2 focus:ring-blue-500 outline-none resize-none"
             value={text}
             onChange={(e) => handleEncode(e.target.value)}
-            placeholder="Type text to encode..."
+            placeholder={t('placeholderText')}
           />
         </div>
 
         <div className="flex flex-col">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Base64 Output</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">{t('base64Label')}</label>
           <textarea
             className="flex-grow min-h-[300px] w-full p-4 border border-gray-300 rounded-lg font-mono text-sm focus:ring-2 focus:ring-blue-500 outline-none resize-none"
             value={base64}
             onChange={(e) => handleDecode(e.target.value)}
-            placeholder="Type Base64 to decode..."
+            placeholder={t('placeholderBase64')}
           />
         </div>
       </div>
@@ -58,7 +60,7 @@ export default function Base64Converter() {
           }}
           className="bg-red-50 text-red-600 border border-red-200 px-6 py-2 rounded-lg hover:bg-red-100 transition-colors font-medium"
         >
-          Clear All
+          {t('clearAll')}
         </button>
       </div>
     </div>

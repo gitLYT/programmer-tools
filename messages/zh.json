@@ -1,0 +1,131 @@
+{
+  "Navbar": {
+    "title": "程序员工具箱",
+    "home": "首页",
+    "tools": "工具",
+    "language": "语言"
+  },
+  "Footer": {
+    "rights": "程序员工具箱. 保留所有权利."
+  },
+  "Home": {
+    "title": "OpenClaw 详细安装教程",
+    "description": "OpenClaw 是一款功能强大的个人 AI 助手框架。本教程将指导您如何在个人电脑（本地环境）和云服务器（远程环境）上完成安装。",
+    "section1": {
+      "title": "一、 个人电脑安装教程 (Windows / macOS / Linux)",
+      "intro": "在个人电脑上安装 OpenClaw 最简单的方法是使用官方提供的<strong>一键安装脚本</strong>。",
+      "requirements": {
+        "title": "1. 系统要求",
+        "nodejs": "<strong>Node.js</strong>: 需要版本 22 或更高（安装脚本会自动检测并尝试安装）。",
+        "os": "<strong>操作系统</strong>: macOS, Linux, 或 Windows (推荐在 Windows 上使用 <strong>WSL2</strong>)。"
+      },
+      "steps": {
+        "title": "2. 安装步骤",
+        "unix": {
+          "title": "macOS / Linux / WSL2",
+          "desc": "打开终端，运行以下命令："
+        },
+        "windows": {
+          "title": "Windows (PowerShell)",
+          "desc": "以管理员身份打开 PowerShell，运行以下命令："
+        }
+      },
+      "verify": {
+        "title": "3. 验证安装",
+        "desc": "安装完成后，您可以使用以下命令验证：",
+        "doctor": "检查配置问题。",
+        "status": "查看网关状态。",
+        "dashboard": "在浏览器中打开管理界面。"
+      }
+    },
+    "section2": {
+      "title": "二、 云服务器安装教程 (Linux / Docker)",
+      "intro": "在云服务器（VPS）上，推荐使用 <strong>Docker</strong> 进行容器化部署，这样可以保持环境整洁且易于管理。",
+      "requirements": {
+        "title": "1. 前置要求",
+        "docker": "已安装 <strong>Docker</strong> 和 <strong>Docker Compose v2</strong>。",
+        "os": "一台运行主流 Linux 发行版（如 Ubuntu 22.04 LTS）的云服务器。"
+      },
+      "deploy": {
+        "title": "2. 使用 Docker 快速部署",
+        "intro": "推荐使用官方的 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>docker-setup.sh</code> 脚本进行自动化配置：",
+        "step1": "<strong>克隆仓库</strong>:",
+        "step2": "<strong>运行设置脚本</strong>:",
+        "step2_desc": "该脚本会自动构建镜像、运行初始化向导并启动服务。",
+        "step3": "<strong>手动部署 (可选)</strong>:",
+        "step3_desc": "如果您希望更精细地控制，可以使用以下命令："
+      },
+      "access": {
+        "title": "3. 访问与配置",
+        "dashboard": "<strong>管理界面</strong>: 默认运行在 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>http://服务器IP:18789/</code>。",
+        "security": "<strong>安全提示</strong>: 在云服务器上运行后，请务必在管理界面中设置强密码或使用 SSH 隧道进行访问。",
+        "token": "<strong>获取 Token</strong>: 如果需要重新获取网关 Token，运行："
+      }
+    },
+    "section3": {
+      "title": "三、 常见问题排查",
+      "issue1": {
+        "title": "1. <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw</code> 命令未找到",
+        "desc": "如果安装后提示找不到命令，请检查环境变量。",
+        "unix": "<strong>macOS/Linux</strong>: 将 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>$(npm prefix -g)/bin</code> 添加到您的 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>PATH</code> 中（通常在 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.zshrc</code> 或 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.bashrc</code>）。",
+        "windows": "<strong>Windows</strong>: 将 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>npm prefix -g</code> 的输出路径添加到系统环境变量 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>Path</code> 中。"
+      },
+      "issue2": {
+        "title": "2. 权限问题",
+        "desc": "在 Linux/macOS 上，如果遇到权限错误，请尝试在命令前加上 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>sudo</code> 或检查文件夹所有权。"
+      }
+    },
+    "section4": {
+      "title": "四、 更新与卸载",
+      "update": "<strong>更新</strong>: 运行 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw update</code> 或重新执行安装脚本。",
+      "uninstall": "<strong>卸载</strong>: 运行 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw uninstall</code>。"
+    },
+    "moreInfo": "更多详细信息请参考"
+  },
+  "Tools": {
+    "title": "程序员工具合集",
+    "json": {
+      "name": "JSON 格式化",
+      "desc": "格式化和校验 JSON 数据。"
+    },
+    "base64": {
+      "name": "Base64 编解码",
+      "desc": "Base64 字符串的编码与解码。"
+    },
+    "timestamp": {
+      "name": "时间戳转换",
+      "desc": "Unix 时间戳与人类可读日期的相互转换。"
+    }
+  },
+  "JsonFormatter": {
+    "title": "JSON 格式化",
+    "inputLabel": "输入 JSON",
+    "outputLabel": "输出结果",
+    "placeholderInput": "在此粘贴您的 JSON...",
+    "placeholderOutput": "格式化后的 JSON 将显示在此处...",
+    "format": "格式化",
+    "minify": "压缩",
+    "clear": "清空"
+  },
+  "Base64": {
+    "title": "Base64 转换器",
+    "textLabel": "文本输入",
+    "base64Label": "Base64 输出",
+    "placeholderText": "输入要编码的文本...",
+    "placeholderBase64": "输入要解码的 Base64...",
+    "clearAll": "清空所有",
+    "invalidInput": "Base64 编码输入无效",
+    "invalidBase64": "无效的 Base64 字符串"
+  },
+  "Timestamp": {
+    "title": "时间戳转换器",
+    "current": "当前 Unix 时间戳",
+    "labelTimestamp": "Unix 时间戳 (秒)",
+    "labelDate": "日期字符串 (本地时间)",
+    "now": "当前",
+    "invalidTimestamp": "无效时间戳",
+    "invalidDate": "无效日期",
+    "placeholderTimestamp": "例如 1678886400",
+    "placeholderDate": "例如 2023-03-15 10:00:00"
+  }
+}

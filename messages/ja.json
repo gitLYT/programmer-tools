@@ -1,0 +1,131 @@
+{
+  "Navbar": {
+    "title": "プログラマーツール",
+    "home": "ホーム",
+    "tools": "ツール",
+    "language": "言語"
+  },
+  "Footer": {
+    "rights": "Programmer Tools. All rights reserved."
+  },
+  "Home": {
+    "title": "OpenClaw インストールガイド",
+    "description": "OpenClaw は強力なパーソナル AI アシスタントフレームワークです。このチュートリアルでは、パーソナルコンピュータ（ローカル環境）およびクラウドサーバー（リモート環境）へのインストール方法を説明します。",
+    "section1": {
+      "title": "一、 パーソナルコンピュータへのインストール (Windows / macOS / Linux)",
+      "intro": "パーソナルコンピュータに OpenClaw をインストールする最も簡単な方法は、公式の<strong>ワンクリックインストールスクリプト</strong>を使用することです。",
+      "requirements": {
+        "title": "1. システム要件",
+        "nodejs": "<strong>Node.js</strong>: バージョン 22 以上が必要です（スクリプトは自動的に検出し、インストールを試みます）。",
+        "os": "<strong>OS</strong>: macOS, Linux, または Windows (<strong>WSL2</strong> の使用を推奨)。"
+      },
+      "steps": {
+        "title": "2. インストール手順",
+        "unix": {
+          "title": "macOS / Linux / WSL2",
+          "desc": "ターミナルを開き、以下のコマンドを実行します："
+        },
+        "windows": {
+          "title": "Windows (PowerShell)",
+          "desc": "管理者として PowerShell を開き、以下のコマンドを実行します："
+        }
+      },
+      "verify": {
+        "title": "3. インストールの確認",
+        "desc": "インストール完了後、以下のコマンドで確認できます：",
+        "doctor": "設定の問題を確認します。",
+        "status": "ゲートウェイの状態を確認します。",
+        "dashboard": "ブラウザで管理画面を開きます。"
+      }
+    },
+    "section2": {
+      "title": "二、 クラウドサーバーへのインストール (Linux / Docker)",
+      "intro": "クラウドサーバー（VPS）では、環境をクリーンで管理しやすく保つために、<strong>Docker</strong> を使用したコンテナ化デプロイを推奨します。",
+      "requirements": {
+        "title": "1. 前提条件",
+        "docker": "<strong>Docker</strong> および <strong>Docker Compose v2</strong> がインストールされていること。",
+        "os": "主要な Linux ディストリビューション（Ubuntu 22.04 LTS など）を実行しているクラウドサーバー。"
+      },
+      "deploy": {
+        "title": "2. Docker を使用したクイックデプロイ",
+        "intro": "公式の <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>docker-setup.sh</code> スクリプトを使用することを推奨します：",
+        "step1": "<strong>リポジトリのクローン</strong>:",
+        "step2": "<strong>セットアップスクリプトの実行</strong>:",
+        "step2_desc": "このスクリプトは自動的にイメージをビルドし、初期化ウィザードを実行し、サービスを開始します。",
+        "step3": "<strong>手動デプロイ (オプション)</strong>:",
+        "step3_desc": "より詳細に制御したい場合は、以下のコマンドを使用できます："
+      },
+      "access": {
+        "title": "3. アクセスと設定",
+        "dashboard": "<strong>管理画面</strong>: デフォルトでは <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>http://サーバーIP:18789/</code> で実行されます。",
+        "security": "<strong>セキュリティのヒント</strong>: クラウドサーバーで実行した後は、必ず管理画面で強力なパスワードを設定するか、SSH トンネルを使用してアクセスしてください。",
+        "token": "<strong>トークンの取得</strong>: ゲートウェイトークンを再取得する必要がある場合、以下を実行します："
+      }
+    },
+    "section3": {
+      "title": "三、 トラブルシューティング",
+      "issue1": {
+        "title": "1. <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw</code> コマンドが見つからない",
+        "desc": "インストール後にコマンドが見つからない場合は、環境変数を確認してください。",
+        "unix": "<strong>macOS/Linux</strong>: <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>$(npm prefix -g)/bin</code> を <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>PATH</code> に追加してください（通常は <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.zshrc</code> または <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.bashrc</code>）。",
+        "windows": "<strong>Windows</strong>: <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>npm prefix -g</code> の出力パスをシステム環境変数 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>Path</code> に追加してください。"
+      },
+      "issue2": {
+        "title": "2. 権限の問題",
+        "desc": "Linux/macOS で権限エラーが発生した場合は、コマンドの前に <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>sudo</code> を付けるか、フォルダの所有権を確認してください。"
+      }
+    },
+    "section4": {
+      "title": "四、 更新とアンインストール",
+      "update": "<strong>更新</strong>: <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw update</code> を実行するか、インストールスクリプトを再実行してください。",
+      "uninstall": "<strong>アンインストール</strong>: <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw uninstall</code> を実行してください。"
+    },
+    "moreInfo": "詳細については、以下を参照してください："
+  },
+  "Tools": {
+    "title": "プログラマーツール集",
+    "json": {
+      "name": "JSON フォーマッター",
+      "desc": "JSON データのフォーマットと検証。"
+    },
+    "base64": {
+      "name": "Base64 エンコーダー/デコーダー",
+      "desc": "Base64 文字列のエンコードとデコード。"
+    },
+    "timestamp": {
+      "name": "タイムスタンプ変換",
+      "desc": "Unix タイムスタンプと人間が読める日付の相互変換。"
+    }
+  },
+  "JsonFormatter": {
+    "title": "JSON フォーマッター",
+    "inputLabel": "入力 JSON",
+    "outputLabel": "出力結果",
+    "placeholderInput": "ここに JSON を貼り付けてください...",
+    "placeholderOutput": "フォーマットされた JSON がここに表示されます...",
+    "format": "フォーマット",
+    "minify": "圧縮",
+    "clear": "クリア"
+  },
+  "Base64": {
+    "title": "Base64 コンバーター",
+    "textLabel": "テキスト入力",
+    "base64Label": "Base64 出力",
+    "placeholderText": "エンコードするテキストを入力...",
+    "placeholderBase64": "デコードする Base64 を入力...",
+    "clearAll": "すべてクリア",
+    "invalidInput": "Base64 エンコードの入力が無効です",
+    "invalidBase64": "無効な Base64 文字列です"
+  },
+  "Timestamp": {
+    "title": "タイムスタンプコンバーター",
+    "current": "現在の Unix タイムスタンプ",
+    "labelTimestamp": "Unix タイムスタンプ (秒)",
+    "labelDate": "日付文字列 (ローカル)",
+    "now": "現在",
+    "invalidTimestamp": "無効なタイムスタンプ",
+    "invalidDate": "無効な日付",
+    "placeholderTimestamp": "例: 1678886400",
+    "placeholderDate": "例: 2023-03-15 10:00:00"
+  }
+}

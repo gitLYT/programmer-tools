@@ -1,0 +1,131 @@
+{
+  "Navbar": {
+    "title": "프로그래머 도구",
+    "home": "홈",
+    "tools": "도구",
+    "language": "언어"
+  },
+  "Footer": {
+    "rights": "Programmer Tools. All rights reserved."
+  },
+  "Home": {
+    "title": "OpenClaw 설치 가이드",
+    "description": "OpenClaw는 강력한 개인 AI 비서 프레임워크입니다. 이 튜토리얼은 개인용 컴퓨터(로컬) 및 클라우드 서버(원격)에 설치하는 방법을 안내합니다.",
+    "section1": {
+      "title": "I. 개인용 컴퓨터 설치 (Windows / macOS / Linux)",
+      "intro": "개인용 컴퓨터에 OpenClaw를 설치하는 가장 쉬운 방법은 공식 <strong>원클릭 설치 스크립트</strong>를 사용하는 것입니다.",
+      "requirements": {
+        "title": "1. 시스템 요구 사항",
+        "nodejs": "<strong>Node.js</strong>: 버전 22 이상 필요 (스크립트가 자동으로 감지하고 설치를 시도합니다).",
+        "os": "<strong>운영 체제</strong>: macOS, Linux, 또는 Windows (<strong>WSL2</strong> 사용 권장)."
+      },
+      "steps": {
+        "title": "2. 설치 단계",
+        "unix": {
+          "title": "macOS / Linux / WSL2",
+          "desc": "터미널을 열고 다음 명령어를 실행하세요:"
+        },
+        "windows": {
+          "title": "Windows (PowerShell)",
+          "desc": "관리자 권한으로 PowerShell을 열고 다음 명령어를 실행하세요:"
+        }
+      },
+      "verify": {
+        "title": "3. 설치 확인",
+        "desc": "설치 후 다음 명령어로 확인할 수 있습니다:",
+        "doctor": "구성 문제를 확인합니다.",
+        "status": "게이트웨이 상태를 확인합니다.",
+        "dashboard": "브라우저에서 대시보드를 엽니다."
+      }
+    },
+    "section2": {
+      "title": "II. 클라우드 서버 설치 (Linux / Docker)",
+      "intro": "클라우드 서버(VPS)에서는 환경을 깨끗하고 관리하기 쉽게 유지하기 위해 <strong>Docker</strong>를 사용한 컨테이너 배포를 권장합니다.",
+      "requirements": {
+        "title": "1. 전제 조건",
+        "docker": "<strong>Docker</strong> 및 <strong>Docker Compose v2</strong> 설치됨.",
+        "os": "주요 Linux 배포판(예: Ubuntu 22.04 LTS)을 실행하는 클라우드 서버."
+      },
+      "deploy": {
+        "title": "2. Docker로 빠른 배포",
+        "intro": "공식 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>docker-setup.sh</code> 스크립트 사용을 권장합니다:",
+        "step1": "<strong>저장소 복제</strong>:",
+        "step2": "<strong>설치 스크립트 실행</strong>:",
+        "step2_desc": "이 스크립트는 자동으로 이미지를 빌드하고, 초기화 마법사를 실행하며, 서비스를 시작합니다.",
+        "step3": "<strong>수동 배포 (선택 사항)</strong>:",
+        "step3_desc": "더 정밀하게 제어하려면 다음 명령어를 사용하세요:"
+      },
+      "access": {
+        "title": "3. 접속 및 구성",
+        "dashboard": "<strong>대시보드</strong>: 기본적으로 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>http://서버IP:18789/</code>에서 실행됩니다.",
+        "security": "<strong>보안 팁</strong>: 클라우드 서버에서 실행 후, 반드시 대시보드에서 강력한 비밀번호를 설정하거나 SSH 터널링을 사용하세요.",
+        "token": "<strong>토큰 가져오기</strong>: 게이트웨이 토큰을 다시 가져와야 하는 경우 실행:"
+      }
+    },
+    "section3": {
+      "title": "III. 문제 해결",
+      "issue1": {
+        "title": "1. <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw</code> 명령을 찾을 수 없음",
+        "desc": "설치 후 명령을 찾을 수 없으면 환경 변수를 확인하세요.",
+        "unix": "<strong>macOS/Linux</strong>: <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>$(npm prefix -g)/bin</code>을 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>PATH</code>에 추가하세요 (보통 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.zshrc</code> 또는 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>~/.bashrc</code>).",
+        "windows": "<strong>Windows</strong>: <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>npm prefix -g</code> 출력 경로를 시스템 환경 변수 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>Path</code>에 추가하세요."
+      },
+      "issue2": {
+        "title": "2. 권한 문제",
+        "desc": "Linux/macOS에서 권한 오류가 발생하면 명령어 앞에 <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>sudo</code>를 붙이거나 폴더 소유권을 확인하세요."
+      }
+    },
+    "section4": {
+      "title": "IV. 업데이트 및 제거",
+      "update": "<strong>업데이트</strong>: <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw update</code>를 실행하거나 설치 스크립트를 다시 실행하세요.",
+      "uninstall": "<strong>제거</strong>: <code class='bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono'>openclaw uninstall</code>을 실행하세요."
+    },
+    "moreInfo": "더 자세한 정보는 다음을 참조하세요:"
+  },
+  "Tools": {
+    "title": "프로그래머 도구 모음",
+    "json": {
+      "name": "JSON 포맷터",
+      "desc": "JSON 데이터 포맷 및 유효성 검사."
+    },
+    "base64": {
+      "name": "Base64 인코더/디코더",
+      "desc": "Base64 문자열 인코딩 및 디코딩."
+    },
+    "timestamp": {
+      "name": "타임스탬프 변환기",
+      "desc": "Unix 타임스탬프와 사람이 읽을 수 있는 날짜 간 변환."
+    }
+  },
+  "JsonFormatter": {
+    "title": "JSON 포맷터",
+    "inputLabel": "입력 JSON",
+    "outputLabel": "출력",
+    "placeholderInput": "여기에 JSON을 붙여넣으세요...",
+    "placeholderOutput": "포맷된 JSON이 여기에 표시됩니다...",
+    "format": "포맷",
+    "minify": "압축",
+    "clear": "지우기"
+  },
+  "Base64": {
+    "title": "Base64 변환기",
+    "textLabel": "텍스트 입력",
+    "base64Label": "Base64 출력",
+    "placeholderText": "인코딩할 텍스트 입력...",
+    "placeholderBase64": "디코딩할 Base64 입력...",
+    "clearAll": "모두 지우기",
+    "invalidInput": "Base64 인코딩 입력이 유효하지 않습니다",
+    "invalidBase64": "유효하지 않은 Base64 문자열"
+  },
+  "Timestamp": {
+    "title": "타임스탬프 변환기",
+    "current": "현재 Unix 타임스탬프",
+    "labelTimestamp": "Unix 타임스탬프 (초)",
+    "labelDate": "날짜 문자열 (로컬)",
+    "now": "현재",
+    "invalidTimestamp": "유효하지 않은 타임스탬프",
+    "invalidDate": "유효하지 않은 날짜",
+    "placeholderTimestamp": "예: 1678886400",
+    "placeholderDate": "예: 2023-03-15 10:00:00"
+  }
+}
